@@ -1,0 +1,2139 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Borel&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"); /* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background: url("../Images/Home_Page/Grid_Home.png") repeat,
+    /* Static Grid image */
+      linear-gradient(to right, rgba(0, 28, 48, 0.7), rgba(52, 12, 24, 0.7)),
+    /* Gradient */ url("../Images/Work_Page/work_bg.png") no-repeat center
+      center/cover;
+  background-attachment: fixed, scroll, scroll;
+  animation: bg-animation 1s linear infinite;
+  color: white;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #202020;
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  border-radius: 0 0 3% 3%;
+}
+img {
+  max-width: 1000px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container img {
+  height: 50px;
+  padding-left: 100px;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 10px;
+  transition: color 0.3s;
+  padding-right: 60px;
+}
+
+.nav-links a:hover {
+  color: #49d3ff;
+}
+
+.nav-links .work-active {
+  color: #49d3ff;
+}
+.container {
+  display: flex;
+  margin-top: 150px; /* Leave space for sticky header */
+}
+
+/* section {
+    margin-bottom: 100px; /* Space between sections */
+/* padding-left:8%; 
+} */
+
+.back-button {
+  margin-left: 14%; /* Adjust margin for better alignment */
+  padding: 8px 12px; /* Add padding for more click area */
+  display: flex;
+  align-items: center;
+  gap: 14px; /* Slightly reduce gap for better balance */
+  color: #fff;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth hover effect */
+  width: fit-content;
+}
+
+/* Style the arrow only with a border */
+.back-button .arrow {
+  padding: 4px;
+  border: 2px solid #fff; /* Border around the arrow */
+  display: inline-flex; /* Ensures the arrow image stays centered */
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-button .arrow img.arrow-icon {
+  width: 16px; /* Adjust arrow size as needed */
+  height: 16px; /* Adjust arrow size as needed */
+  filter: invert(1); /* Inverts colors for visibility */
+}
+
+.back-button .button-text {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 4px;
+  color: #9c9c9c;
+}
+.button-text a {
+  text-decoration: none;
+  color: #9c9c9c;
+}
+.back-button:hover .button-text {
+  text-decoration: underline;
+}
+/* Sticky Sidebar */
+.sticky-sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 150px;
+  width: 200px;
+  background-color: #202020;
+  padding: 20px;
+  height: max-content;
+  border-radius: 20px;
+  backdrop-filter: blur(800px);
+  border: 1px solid #ffab46;
+}
+
+.sticky-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sticky-sidebar li {
+  margin-bottom: 20px;
+}
+
+.sticky-sidebar li a {
+  text-decoration: none;
+  font-size: 18px;
+  display: flex; /* Flexbox for aligning circle and text */
+  align-items: center; /* Align circle and text vertically */
+}
+
+.bullet-circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #888; /* Inactive circle color */
+  margin-right: 16px;
+  transition: background-color 0.3s ease; /* Smooth transition for hover/active */
+}
+
+.link-text {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+/* Active Link */
+.sticky-sidebar li a.active .bullet-circle {
+  background-color: #49d3ff;
+}
+
+.sticky-sidebar li a.active .link-text {
+  color: #49d3ff; /* Active text color */
+}
+
+/* Hover Effect */
+.sticky-sidebar li a:hover .bullet-circle {
+  background-color: #49d3ff; /* Hover circle color */
+}
+
+.sticky-sidebar li a:hover .link-text {
+  color: #49d3ff;
+}
+
+#overview {
+  margin-left: 50px;
+  margin: 0 14%;
+  margin-bottom: 100px;
+}
+
+.overview-image {
+  max-width: 1200px; /* Fixed width */
+  border-radius: 20px; /* Rounded corners */
+}
+
+.project-info {
+  margin-top: 44px;
+  padding: 20px;
+  background-color: #171717;
+  border-radius: 20px;
+  color: #fff;
+  box-shadow: 2px 2px 20px 1px #ffffff1a;
+  width: 1200px;
+}
+
+/* Problem Statement */
+.problem-statement {
+  margin-bottom: 30px;
+  padding: 20px;
+  width: 1200px;
+}
+
+.problem-title {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 25px;
+  font-weight: 900;
+  color: #ffab46;
+  margin-bottom: 10px;
+}
+
+.problem-description {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.problem-detail {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #c5c5c5;
+}
+
+.project-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 61px;
+  width: 1200px;
+}
+
+.project-details div {
+  background-color: #171717;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 20px 1px #ffffff1a;
+  max-height: 260px;
+}
+.role {
+  width: 396px;
+}
+.details {
+  width: 323px;
+}
+.deliverables {
+  width: 396px;
+}
+h4 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 900;
+  color: #ffab46;
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+#overview ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+li {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #e0e0e0;
+  margin-bottom: 10px;
+}
+
+li strong {
+  font-weight: bold;
+}
+
+/* Image icons for tools */
+.details img {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .project-details {
+    flex-direction: column;
+  }
+
+  .project-details div {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+.solution-sneak-peak {
+  font-family: "Nunito Sans", sans-serif;
+  width: 1200px;
+  padding: 80px; /* Optional: Adjust padding as needed */
+  color: #fff;
+  background-color: #171717;
+  box-shadow: 2px 2px 20px 1px #ffffff1a;
+  margin-top: 62px;
+  border-radius: 20px;
+}
+.solution-sneak-peak h2 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  color: #ffab46;
+  margin: 0 0 60px -40px;
+}
+
+.solution-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.solution-item {
+  display: flex;
+  justify-content: space-between; /* Space between image and text */
+  align-items: center;
+  max-width: 1200px; /* Adjust as per your requirement */
+}
+
+.solution-image img {
+  max-width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: rounded corners */
+}
+.solution-text {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Vertically center the content */
+  align-items: flex-start; /* Horizontally center the content */
+  padding: 6%;
+}
+
+.heading-wrapper {
+  display: flex;
+  align-items: center; /* Align number and heading on the same line */
+  justify-content: center;
+}
+.number {
+  flex-shrink: 0; /* Prevent the number from shrinking */
+}
+
+.number span {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-right: 30px;
+}
+
+.solution-image {
+  flex: 0 0 20%; /* Image will take 35% of the space */
+}
+
+.text h3 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.solution-item .right-side {
+  justify-content: flex-end;
+}
+.solution-text p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  color: #919191;
+  margin-left: 100px;
+}
+@media (max-width: 768px) {
+  .solution-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+#designprocess {
+  margin: 0 14%;
+  margin-bottom: 100px;
+}
+.design-image {
+  max-width: 1200px; /* Fixed width */
+  border-radius: 20px; /* Rounded corners */
+}
+
+#deskresearch {
+  font-family: "Nunito Sans", sans-serif;
+  width: 1200px;
+  padding: 80px;
+  color: #fff;
+  background-color: #171717;
+  box-shadow: 2px 2px 20px 1px #ffffff1a;
+  border-radius: 20px;
+  margin: 0 14%;
+  margin-bottom: 100px;
+}
+
+#deskresearch h2 {
+  font-size: 30px;
+  margin: 0 0 60px -40px;
+  font-weight: 900;
+  line-height: 40.92px;
+  font-family: "Nunito Sans", sans-serif;
+  color: #ffab46;
+}
+#deskresearch .desk-text {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32.74px;
+  color: #c5c5c5;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* Desk Research Code */
+#deskresearch .container-3w {
+  display: flex;
+  flex-direction: column;
+  gap: 131px;
+}
+
+#deskresearch .inner-container-3w {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#deskresearch .inner-container-3w .content-1 .content-class {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 304px;
+}
+
+#deskresearch .inner-container-3w .content-1 .content-class span {
+  font-family: "Nunito Sans", sans-serif;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 171, 70, 1),
+    rgba(253, 70, 139, 1) 30%
+  );
+  color: transparent;
+  background-clip: text;
+  font-size: 32px;
+  font-weight: bold;
+}
+#deskresearch .inner-container-3w .content-1 .content-class .normal-content {
+  font-family: "Nunito Sans", sans-serif;
+  color: white;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+#deskresearch .inner-container-3w .content-2 {
+  font-family: "Nunito Sans", sans-serif;
+  color: #919191;
+  font-size: 20px;
+  font-weight: 300;
+  width: 562px;
+  height: 66px;
+}
+#deskresearch .inner-container-3w .content-3 .inner-content-3 {
+  width: 160px;
+  height: 152px;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px #ffdfb8 solid;
+  border-radius: 20px;
+}
+
+/* Desk Research Code Ends */
+
+/* Desk Research starts */
+
+#type-of-research h3 {
+  color: #ffab46;
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+/* Desk Research ends */
+/* Literature Review Code starts */
+#literature-review h3 {
+  color: #ffab46;
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+#literature-review .all-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 54px;
+}
+
+#literature-review .review-card {
+  font-family: "Nunito Sans", sans-serif;
+  position: relative;
+  width: 310px;
+  height: 310px;
+  padding-top: 28px;
+  box-sizing: border-box;
+  border: 1px solid #ffab46;
+  background-color: rgba(234, 182, 61, 0.1);
+}
+
+#literature-review .review-card .review-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#literature-review .review-card .review-card-container .content-1 {
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 175px;
+  word-break: break-word;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 300;
+  color: #919191;
+}
+
+#literature-review .review-card .review-card-container .content-2 {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 300;
+  color: #919191;
+}
+
+#literature-review .corner-border {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 78px;
+  height: 78px;
+  margin-top: 20px;
+  border-top: 1px solid #ffab46;
+  border-left: 1px solid #ffab46;
+  background: linear-gradient(135deg, rgba(255, 171, 70, 0.5) 50%, #171717 50%);
+}
+
+/* Literature Review Code ends */
+
+.divider {
+  margin: 40px 0;
+  border: 0;
+  height: 2px;
+  background: #dcdcdc;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.insights {
+  text-align: left;
+}
+
+.insights h3 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 42px;
+  color: #ffab46;
+  margin-bottom: 25px;
+}
+
+.insights .insights-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+.insights .insights-container .insights-card {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.insights .insights-card .content-1 {
+  font-size: 92px;
+  font-weight: 700;
+}
+.insights .insights-card .content-2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.insights .insights-card .content-3 {
+  font-size: 20px;
+  font-weight: 00;
+  color: #919191;
+}
+
+/* Problem Statment Section Starts */
+
+#problem-statement {
+  font-family: "Nunito Sans", sans-serif;
+  color: #c5c5c5;
+  background-color: #171717;
+  padding: 80px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 20px 1px #ffffff1a;
+  width: 1200px;
+  margin: 0 14%;
+  margin-bottom: 100px;
+}
+
+#problem-statement h2 {
+  font-size: 30px;
+  margin: 0 0 60px -40px;
+  font-weight: 900;
+  line-height: 40.92px;
+  font-family: "Nunito Sans", sans-serif;
+  color: #ffa149;
+}
+
+#problem-statement .ps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#problem-statement .ps-container .content-1 {
+  font-size: 30px;
+  font-weight: 600;
+}
+#problem-statement .ps-container .content-2 {
+  font-size: 22px;
+  font-weight: 200;
+  font-style: italic;
+  color: #919191;
+}
+
+/* Problem Statement Section Ends */
+
+/* General styling for the section */
+
+/* Pilot Study Starts */
+.pilot-study-vertical-hr {
+  left: 50%;
+  height: 231px;
+  border: 1px solid #dcdcdc;
+}
+
+.pilot-divider {
+  border: 0;
+  height: 2px;
+  background: #dcdcdc;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+#pilot-study .highlight-word {
+  font-weight: 700;
+  color: white;
+}
+
+#pilot-study {
+  font-family: "Nunito Sans", sans-serif;
+  color: #c5c5c5;
+  background-color: #171717;
+  padding: 80px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 20px 1px #ffffff1a;
+  width: 1200px;
+  margin: 0 14%;
+  margin-bottom: 100px;
+}
+
+#pilot-study h2 {
+  font-size: 30px;
+  margin: 0 0 60px -40px;
+  font-weight: 900;
+  line-height: 40.92px;
+  font-family: "Nunito Sans", sans-serif;
+  color: #ffab46;
+}
+
+.section-1-container {
+  display: flex;
+  flex-direction: column;
+  gap: 84px;
+}
+.pilot-study-info {
+  font-size: 20px;
+  color: #c5c5c5;
+}
+
+h3 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 42px;
+  color: #ffab46;
+  margin-bottom: 25px;
+}
+.inside-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.content-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-right: 106px;
+}
+.content-1 .interview-info-content-1 {
+  display: flex;
+  flex-direction: column;
+}
+.content-1 .interview-info-content-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-2 {
+  display: flex;
+  margin-left: 56px;
+}
+.content-2 .stackholders-info-content-1 {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.content-2 .stackholders-info-content-1 .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-2 .stackholders-info-content-2 {
+  display: flex;
+  flex-direction: column;
+  margin-right: 32px;
+}
+
+.content-3 .avg-time {
+  display: flex;
+  flex-direction: column;
+  margin-left: 56px;
+}
+ .bold-type {
+  font-weight: 800;
+  font-size: 20px;
+}
+.normal-type {
+  font-weight: 400;
+  font-size: 20px;
+  color: #919191;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.section-2-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-2-container .objective-points {
+  margin-left: 40px;
+}
+.section-2-container .objective-points li {
+  font-size: 20px;
+  color: #919191;
+}
+.section-2-container .objective-points span {
+  font-weight: 700;
+  color: white;
+}
+
+#pilot-study .research-info {
+  font-size: 20px;
+  color: #919191;
+  margin-bottom: 66px;
+}
+#pilot-study .chart-container {
+  width: 1033px;
+  padding: 40px;
+  border: 1px solid #ffab46;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+#pilot-study .chart-container .box-content {
+  padding: 15px 24px;
+  border: 1px solid #ffab46;
+  background-color: rgba(60, 60, 60, 0.3);
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#pilot-study .section-3-container .content-info {
+  margin: 50px 0px 50px 30px;
+  font-size: 20px;
+  color: #919191;
+  font-weight: 400;
+}
+#pilot-study .section-3-container .content-info span {
+  color: white;
+  font-weight: 700;
+}
+
+#pilot-study .stakeholders-research-card-container {
+  width: 1033px;
+  padding: 64px 27px;
+  border: 1px solid #ffab46;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+
+#pilot-study .stakeholders-research-card-container .all-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+#pilot-study .stakeholders-research-card-container .all-cards .card-1 {
+  width: 304px;
+  height: 326px;
+  border: 1px solid #ffab46;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 12px;
+}
+
+#pilot-study .stakeholders-research-card-container .all-cards .card-1 .heading {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+#pilot-study .stakeholders-research-card-container .all-cards .card-1 li {
+  margin-left: 16px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #919191;
+}
+
+#pilot-study .stakeholders-research-card-container .all-cards .card-1 li span {
+  font-weight: 700;
+  color: white;
+}
+
+#pilot-study .stakeholders-research-card-container .box-content {
+  padding: 15px 24px;
+  border: 1px solid #ffab46;
+  background-color: rgba(60, 60, 60, 0.3);
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#pilot-study .insights-container {
+  display: flex;
+  flex-direction: row;
+  gap: 78px;
+}
+
+#pilot-study .insights-container .content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 280px;
+  margin-top: 0px;
+}
+
+#pilot-study .insights-container .content-container .number {
+  font-size: 76px;
+  font-weight: bold;
+}
+
+#pilot-study .insights-container .content-container .pilot-content-1 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+#pilot-study .insights-container .content-container .pilot-content-2 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #919191;
+}
+
+#pilot-study .image-container {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 82px;
+  margin-bottom: 73px;
+}
+
+/* Pilot Study Ends */
+
+/* Container for each analysis item */
+.analysis-item {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 150px;
+}
+
+/* Container for the number and text */
+.number-text {
+  display: flex;
+  align-items: center;
+  max-width: 70%;
+}
+
+/* Number styling */
+.number {
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 130.94px;
+  color: #ffffff;
+  margin-right: 25px;
+}
+
+/* Text styling */
+.number-text p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32.74px;
+  color: #919191;
+  margin-top: 13%;
+}
+.number-text strong {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 42px;
+  font-weight: 700; /* Bold font for the "Source" */
+  color: #ffffff;
+}
+
+.chart img {
+  margin-top: -20px;
+  max-width: 400px;
+}
+
+/* StackHolder Section Starts */
+
+#stackholder-section {
+  font-family: "Nunito Sans", sans-serif;
+  color: #c5c5c5;
+  background-color: #171717;
+  padding: 80px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 20px 1px #ffffff1a;
+  width: 1200px;
+  margin: 0 14%;
+  margin-bottom: 100px;
+}
+
+#stackholder-section h2 {
+  font-size: 30px;
+  margin: 0 0 60px -40px;
+  font-weight: 900;
+  line-height: 40.92px;
+  font-family: "Nunito Sans", sans-serif;
+  color: #ffab46;
+}
+
+#stackholder-section .info {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+#stackholder-section .sh-content-1 {
+  font-size: 20px;
+  color: #c5c5c5;
+}
+
+#stackholder-section .sh-content-2-container {
+  display: flex;
+  gap: 189px;
+}
+
+#stackholder-section .sh-content-2-container .inside-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#stackholder-section .sh-content-2-container .inside-content .heading {
+  font-size: 27px;
+  color: white;
+  font-weight: 700;
+}
+
+#stackholder-section .sh-content-2-container .inside-content .info-1 {
+  font-size: 18px;
+  color: #919191;
+  width: 300px;
+}
+
+#stackholder-section .highlight-word {
+  font-weight: 700;
+  color: white;
+}
+
+/* StackHolder Section ends */
+
+/* Primary Research Starts */
+
+.pilot-study-vertical-hr {
+  left: 50%;
+  height: 231px;
+  border: 1px solid #dcdcdc;
+}
+
+.pilot-divider {
+  border: 0;
+  height: 2px;
+  background: #dcdcdc;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+#research-section .highlight-word {
+  font-weight: 700;
+  color: white;
+}
+
+#research-section {
+  font-family: "Nunito Sans", sans-serif;
+  color: #c5c5c5;
+  background-color: #171717;
+  padding: 80px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 20px 1px #ffffff1a;
+  width: 1200px;
+  margin: 0 14%;
+  margin-bottom: 100px;
+}
+
+#research-section h2 {
+  font-size: 30px;
+  margin: 0 0 60px -40px;
+  font-weight: 900;
+  line-height: 40.92px;
+  font-family: "Nunito Sans", sans-serif;
+  color: #ffab46;
+}
+
+#research-section .section-1-container {
+  display: flex;
+  flex-direction: column;
+  gap: 58px;
+}
+#research-section .research-info {
+  font-size: 20px;
+  color: #c5c5c5;
+}
+
+#research-section h3 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 42px;
+  color: #ffab46;
+  margin-bottom: 25px;
+}
+#research-section .inside-content {
+  display: flex;
+  flex-direction: row;
+}
+
+#research-section .content-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-right: 106px;
+}
+#research-section .content-1 .interview-info-content-1 {
+  display: flex;
+  flex-direction: column;
+}
+#research-section .content-1 .interview-info-content-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+#research-section .content-2 {
+  display: flex;
+  margin-left: 56px;
+}
+#research-section .content-2 .stackholders-info-content-1 {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+#research-section .content-2 .stackholders-info-content-1 .info {
+  display: flex;
+  flex-direction: column;
+}
+
+#research-section .content-2 .stackholders-info-content-2 {
+  display: flex;
+  flex-direction: column;
+  margin-right: 32px;
+}
+
+#research-section .content-3 .avg-time {
+  display: flex;
+  flex-direction: column;
+  margin-left: 56px;
+}
+#research-section .bold-type {
+  font-weight: 800;
+  font-size: 20px;
+}
+#research-section .normal-type {
+  font-weight: 400;
+  font-size: 20px;
+  color: #919191;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#research-section .section-2-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#research-section .section-2-container .objective-points {
+  margin-left: 40px;
+}
+#research-section .section-2-container .objective-points li {
+  font-size: 20px;
+  color: #919191;
+}
+#research-section .section-2-container .objective-points span {
+  font-weight: 700;
+  color: white;
+}
+
+#research-section .research-info {
+  font-size: 20px;
+  color: #919191;
+  margin-bottom: 66px;
+}
+#research-section .chart-container {
+  width: 1033px;
+  padding: 40px;
+  border: 1px solid #ffab46;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+#research-section .chart-container .box-content {
+  padding: 15px 24px;
+  border: 1px solid #ffab46;
+  background-color: rgba(60, 60, 60, 0.3);
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Findings Research Cards */
+#research-section .section-3-container .all-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 54px;
+  margin-top: 40px;
+}
+
+#research-section .section-3-container .review-card {
+  font-family: "Nunito Sans", sans-serif;
+  position: relative;
+  width: 310px;
+  height: 310px;
+  padding-top: 28px;
+  box-sizing: border-box;
+  border: 1px solid #ffab46;
+  background-color: rgba(234, 182, 61, 0.1);
+}
+
+#research-section .section-3-container .review-card .review-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 16px;
+  gap: 2px;
+}
+
+#research-section
+  .section-3-container
+  .review-card
+  .review-card-container
+  .content-1-info {
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 132px;
+  word-break: break-word;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 300;
+  color: #919191;
+}
+
+#research-section
+  .section-3-container
+  .review-card
+  .review-card-container
+  .content-2-info {
+  font-size: 16px;
+  text-align: center;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+#research-section .section-3-container .corner-border {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 78px;
+  height: 78px;
+  margin-top: 20px;
+  border-top: 1px solid #ffab46;
+  border-left: 1px solid #ffab46;
+  background: linear-gradient(135deg, rgba(255, 171, 70, 0.5) 50%, #171717 50%);
+}
+/* Code Ends */
+
+#research-section .insights-container {
+  display: flex;
+  flex-direction: row;
+  gap: 78px;
+}
+
+#research-section .insights-container .content-container-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 280px;
+  margin-top: 0px;
+}
+
+#research-section .insights-container .content-container-1 .number {
+  font-size: 76px;
+  font-weight: bold;
+}
+
+#research-section .insights-container .content-container-1 .pilot-content-1 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+#research-section .insights-container .content-container-1 .pilot-content-2 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #919191;
+}
+
+#research-section .section-3-container .image-container {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 82px;
+  margin-bottom: 73px;
+  width: 100%;
+}
+
+/* Primary Research Ends */
+
+/* market and competition Study */
+#m-c-study .highlight-word {
+  font-weight: 700;
+  color: white;
+}
+
+#m-c-study {
+  font-family: "Nunito Sans", sans-serif;
+  color: #c5c5c5;
+  background-color: #171717;
+  padding: 80px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 20px 1px #ffffff1a;
+  width: 1200px;
+  margin: 0 14%;
+  margin-bottom: 100px;
+}
+
+#m-c-study .mc-info {
+  font-size: 20px;
+  color: #c5c5c5;
+}
+
+#m-c-study h2 {
+  font-size: 30px;
+  margin: 0 0 60px -40px;
+  font-weight: 900;
+  line-height: 40.92px;
+  font-family: "Nunito Sans", sans-serif;
+  color: #ffab46;
+}
+
+#m-c-study h3 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 42px;
+  color: #ffab46;
+  margin-bottom: 25px;
+}
+
+#m-c-study .curr-trends {
+  display: flex;
+  flex-direction: column;
+  gap: 63px;
+  margin-top: 32px;
+}
+
+#m-c-study .curr-trends .four-box-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 127px;
+  margin-left: 161px;
+}
+
+#m-c-study .curr-trends .four-box-container .box-1 {
+  width: 312px;
+  height: 325px;
+  border: 1px solid #ffab46;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 22px;
+  align-items: center;
+  background-color: rgba(60, 60, 60, 0.1);
+}
+
+#m-c-study .curr-trends .box-1 .curr-trends-content-1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 22px;
+}
+
+#m-c-study .curr-trends .box-1 .curr-trends-content-2 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 22px;
+  text-align: center;
+  color: #919191;
+  height: 80px;
+}
+
+#m-c-study .curr-trends .box-1 .curr-trends-icon {
+  margin-top: 77px;
+}
+
+#m-c-study .curr-info {
+  font-size: 20px;
+  color: #c5c5c5;
+  margin-bottom: 60px;
+}
+
+#m-c-study .curr-tools .center-box-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 72px;
+}
+
+#m-c-study .curr-tools .box-content {
+  padding: 15px 24px;
+  border: 1px solid rgba(255,171,70, 0.3);
+  background-color: rgba(60, 60, 60, 0.3);
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  width: 631px;
+}
+
+#m-c-study .curr-info .responsive-img-1 {
+  max-width: 1085px;
+  height: auto;
+  width: auto;
+}
+
+#m-c-study .graph-container .border-component {
+  border: 1px solid #ffab46;
+  padding: 95px;
+  border-radius: 20px;
+}
+
+#m-c-study .curr-info .responsive-img-2 {
+  border-radius: 1px solid white;
+}
+
+#m-c-study .graph-container {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  align-items: center;
+}
+
+/* market and competiton study ends */
+
+#end-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.end-card {
+  border-radius: 20px;
+  opacity: 1;
+  display: flex;
+  background-color: #171717;
+  box-shadow: 2px 2px 20px 1px #ffffff1a;
+  overflow: hidden;
+  max-width: 1203px;
+  height: 440px;
+  padding: 41px;
+  padding-top: 37px;
+  width: 100%;
+  align-items: center;
+}
+
+.end-card-content {
+  flex: 1;
+}
+
+.end-card-content h2 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+.end-card-content .end-tags {
+  font-family: "Nunito Sans", sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  color: #e07160;
+  font-size: 30px;
+  margin-bottom: 100px;
+}
+.end-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-left: 10px; /* Add space between text and icon */
+  border: 1px solid white;
+  border-radius: 4px; /* Rounded box */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Invert the black arrow icon to white */
+.end-icon-box img {
+  width: 16px; /* Adjust icon size */
+  height: 16px;
+  filter: invert(1); /* Inverts color from black to white */
+  transition: filter 0.3s ease;
+}
+.end-card-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 250px;
+  border: 1px solid #e07160;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+.end-card-image img {
+  height: 180px;
+  width: 180px;
+}
+.end-button {
+  font-family: "Nunito Sans", sans-serif;
+  max-width: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 24px;
+  margin-right: 10px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #ffffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.end-button:hover {
+  background-color: #49d3ff; /* Change background to white */
+  color: #000000; /* Text color to black */
+  border-color: #49d3ff; /* Change border to white */
+}
+.end-button:hover .end-icon-box {
+  border-color: #000000; /* Box border turns black */
+  background-color: #49d3ff; /* Optional: background change */
+}
+.end-button:hover .end-icon-box img {
+  filter: invert(0); /* Reverts the color back to black on hover */
+}
+
+#designprocess {
+  margin: 0 14%;
+  margin-bottom: 100px;
+}
+
+.end-back-button {
+  margin-left: 14%; /* Adjust margin for better alignment */
+  padding: 8px 12px; /* Add padding for more click area */
+  display: flex;
+  align-items: center;
+  gap: 14px; /* Slightly reduce gap for better balance */
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth hover effect */
+  width: fit-content;
+}
+
+/* Style the arrow only with a border */
+.end-back-button .end-arrow {
+  padding: 4px;
+  border: 2px solid #49d3ff; /* Border around the arrow */
+  display: inline-flex; /* Ensures the arrow image stays centered */
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.end-back-button .end-arrow img.end-arrow-icon {
+  width: 25px; /* Adjust arrow size as needed */
+  height: 25px; /* Adjust arrow size as needed */
+  filter: invert(1); /* Inverts colors for visibility */
+  transform: scaleX(-1);
+  color: #49d3ff;
+}
+.end-button-text a {
+  font-family: "Nunito Sans", sans-serif;
+  line-height: 47.74px;
+  font-size: 35px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #49d3ff;
+}
+.end-back-button:hover .end-button-text {
+  text-decoration: underline;
+  color: #49d3ff;
+}
+
+#how-might-we {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: #171717;
+  padding: 80px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 20px 1px #ffffff1a;
+  width: 1200px;
+  margin: 0 14%;
+  margin-bottom: 100px;
+}
+
+#how-might-we h2 {
+  font-size: 30px;
+  margin: 0 0 60px -40px;
+  font-weight: 900;
+  line-height: 40.92px;
+  font-family: "Nunito Sans", sans-serif;
+  color: #ffab46;
+}
+.perspective {
+  margin-bottom: 70px;
+}
+.perspective h3 {
+  color: #919191;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32.74px;
+  margin-bottom: 20px;
+}
+.perspective p {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 40.92px;
+  color: #ffffff;
+}
+
+
+#ideation {
+  font-family: "Nunito Sans", sans-serif;
+  color: #c5c5c5;
+  background-color: #171717;
+  padding: 80px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 20px 1px #ffffff1a;
+  width: 1200px;
+  margin: 0 14%;
+  margin-bottom: 100px;
+}
+#ideation h2 {
+  font-size: 30px;
+  margin: 0 0 60px -40px;
+  font-weight: 900;
+  line-height: 40.92px;
+  font-family: "Nunito Sans", sans-serif;
+  color: #ffab46;
+}
+#ideation h3 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 42px;
+  color: #ffab46;
+  margin-bottom: 25px;
+}
+.ideation-intro {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32.74px;
+  color: #c5c5c5;
+  margin-bottom: 50px;
+}
+.ideation-intro strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+.idea-exploration {
+  margin-left: 40px;
+  width: 90%;
+}
+.idea-exploration p {
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32.74px;
+}
+.idea-exploration strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.box-container{
+  border: 1px solid rgba(255,171,70, 0.3);
+  margin: 90px 40px;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+.scammer-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.scammer-subclass-1{
+  display: flex;
+  align-items: center;
+  gap:20px;
+}
+.scammer-subclass-1 .big-text{
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 130.94px;
+  width:10%;
+}
+
+/* Findings Research Cards */
+.box-container .scammer-container .scammer-subclass-1 .all-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 54px;
+  margin-top: 40px;
+}
+
+.box-container .scammer-container  .scammer-subclass-1 .review-card {
+  font-family: 'Inter' , sans-serif;
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  border: 1px solid #ffab46;
+  background-color: rgba(234, 182, 61, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.box-container .scammer-container  .scammer-subclass-1 .all-cards .review-card .review-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:30px 0px;
+}
+
+.box-container .scammer-container  .scammer-subclass-1 .all-cards .review-card
+  .review-card-container
+  .content-1-info {
+  font-family: 'Inter' , sans-serif;
+  padding:10px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: -0.011em;
+  color: #919191;
+  text-align: center;
+}
+
+.box-container .scammer-container  .scammer-subclass-1 .all-cards .review-card .corner-border {
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin-top: 150px;
+  margin-left: 150px;
+  border-top: 1px solid #ffab46;
+  border-left: 1px solid #ffab46;
+  background: linear-gradient(135deg, rgba(255, 171, 70, 0.5) 50%, #171717 50%);
+}
+.box-content {
+  margin-top:50px;
+  padding: 15px 24px;
+  border: 1px solid rgba(255,171,70, 0.3);
+  background-color: rgba(60, 60, 60, 0.3);
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  width: 631px;
+}
+.cd-text{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-container-mash{
+  border: 1px solid rgba(255,171,70, 0.3);
+  margin: 90px 40px;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+.box-container-grid {
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.box-column-1 , .box-column-2{
+  gap:20px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 820px;
+}
+
+.box-container-grid .box-column-1 img{
+  width:580px;
+  height: 400px;
+}
+.box-container-grid .box-column-2 .long-img img{
+  width:360px;
+  height: 559px;
+}
+.box-container-grid .box-column-2 .small-img img{
+  width:360px;
+  height: 231px;
+}
+
+#infoarch {
+  font-family: "Nunito Sans", sans-serif;
+  color: #c5c5c5;
+  background-color: #171717;
+  padding: 80px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 20px 1px #ffffff1a;
+  width: 1200px;
+  margin: 0 14%;
+  margin-bottom: 100px;
+}
+#infoarch h2 {
+  font-size: 30px;
+  margin: 0 0 60px -40px;
+  font-weight: 900;
+  line-height: 40.92px;
+  font-family: "Nunito Sans", sans-serif;
+  color: #ffab46;
+}
+
+#finalconcepts {
+  margin: 0 14%;
+  margin-bottom: 100px;
+}
+#finalconcepts h2 {
+  font-size: 30px;
+  margin: 0 0 60px -40px;
+  font-weight: 900;
+  line-height: 40.92px;
+  font-family: "Nunito Sans", sans-serif;
+  color: #ffab46;
+}
+
+.solution-sneak-peak {
+  font-family: "Nunito Sans", sans-serif;
+  width: 1200px;
+  padding: 80px; /* Optional: Adjust padding as needed */
+  color: #fff;
+  background-color: #171717;
+  box-shadow: 2px 2px 20px 1px #ffffff1a;
+  margin-top: 62px;
+  border-radius: 20px;
+}
+.solution-sneak-peak h2 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  color: #ffab46;
+  margin: 0 0 60px -40px;
+}
+
+.solution-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.solution-item {
+  display: flex;
+  justify-content: space-between; /* Space between image and text */
+  align-items: center;
+  max-width: 1200px; /* Adjust as per your requirement */
+}
+
+.solution-image img {
+  max-width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: rounded corners */
+}
+.solution-text {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Vertically center the content */
+  align-items: flex-start; /* Horizontally center the content */
+  padding: 6%;
+}
+
+.interative-prototype-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:20px;
+}
+/* Button styling for both buttons */
+.button {
+  font-family: 'Nunito Sans', sans-serif;
+  max-width: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 24px;
+  margin-right: 10px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #ffffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Icon Box */
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-left: 10px; /* Add space between text and icon */
+  border: 1px solid white;
+  border-radius: 4px; /* Rounded box */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Invert the black arrow icon to white */
+.icon-box img {
+  width: 16px; /* Adjust icon size */
+  height: 16px;
+  filter: invert(1); /* Inverts color from black to white */
+  transition: filter 0.3s ease;
+}
+.final-concepts-image-container{
+  border: 1px solid rgba(255,171,70, 0.3);
+  margin: 90px 10px;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+.grid-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
+}
+.grid-container img{
+  width: 170px;
+  height: 350px;
+}
+.image-grid-item{
+  margin:5px;
+}
+
+.source-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.source {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #919191;
+  background: #3c3c3c4d;
+  padding: 10px 20px;
+  border-radius: 10px; /* Rounded corners */
+  margin-top: 75px; /* Adjust spacing from the section above */
+}
+.source-container strong {
+  font-family: Nunito Sans;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 42px;
+  font-weight: 700; /* Bold font for the "Source" */
+  color: #ffffff;
+}
+
+
+#visualdesign {
+  font-family: "Nunito Sans", sans-serif;
+  color: #c5c5c5;
+  background-color: #171717;
+  padding: 80px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 20px 1px #ffffff1a;
+  width: 1200px;
+  margin: 0 14%;
+  margin-bottom: 100px;
+}
+#visualdesign h2 {
+  font-size: 30px;
+  margin: 0 0 60px -40px;
+  font-weight: 900;
+  line-height: 40.92px;
+  font-family: "Nunito Sans", sans-serif;
+  color: #ffab46;
+}
+#visualdesign p {
+  color: #c5c5c5;
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32.74px;
+  margin-bottom: 30px;
+}
+
+#usertesting {
+  font-family: "Nunito Sans", sans-serif;
+  color: #c5c5c5;
+  background-color: #171717;
+  padding: 80px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 20px 1px #ffffff1a;
+  width: 1200px;
+  margin: 0 14%;
+  margin-bottom: 100px;
+}
+#usertesting h2 {
+  font-size: 30px;
+  margin: 0 0 60px -40px;
+  font-weight: 900;
+  line-height: 40.92px;
+  font-family: "Nunito Sans", sans-serif;
+  color: #ffab46;
+}
+
+/* Grid for insights */
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 300px;
+}
+
+.insight {
+  border-radius: 10px;
+  position: relative;
+  width: 90%;
+}
+
+/* Numbers */
+.insights-container h3{
+  margin-top:35px;
+}
+.insight h5 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 130.94px;
+  color: #ffffff;
+}
+
+.insight h4 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 42px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.insight p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32.74px;
+  color: #919191;
+}
+
+footer {
+  background-color: #202020;
+  color: white;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  padding-right: 60px;
+  padding-left: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 40px 40px 0 0;
+  box-shadow: 1px 4px 30px 1px #ffffff1a;
+  margin-top: 100px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 25px;
+}
+
+.footer-container p {
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.82px;
+}
+
+.footer-icon-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+  gap: 18px;
+}
+
+.footer-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 58px;
+  height: 58px;
+  border: 1.5px solid #fff;
+  border-radius: 50%;
+  transition: border-color 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-icon img {
+  width: 57px;
+  height: 57px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.footer-icon:hover {
+  border-color: #49d3ff;
+}

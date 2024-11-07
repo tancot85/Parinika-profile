@@ -1,0 +1,78 @@
+.loading-screen {
+  background: #202020;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Make sure it's above other content */
+  opacity: 1;
+  transition: opacity 8s ease-in-out; /* Transition effect */
+}
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styling for the loading text */
+.loading-text {
+  font-family: Borel;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 96px;
+  color: #fff;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+/* Bar container */
+.loading-bars {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+/* The small-bar will grow into the large-bar width */
+@keyframes growBar {
+  0% {
+    width: 120px;
+  }
+  100% {
+    width: 700px;
+  }
+}
+
+/* Apply the animation to both small-bar and large-bar */
+.small-bar {
+  position: fixed;
+  height: 50px; /* Same height for consistency */
+  background: linear-gradient(90deg, #263a40 0%, #43272f 100%);
+  border-radius: 60px; /* Optional for rounded edges */
+  animation: growBar 2.8s ease-in-out forwards;
+  margin-left: -350px;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  margin-top: 40px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #263a40 0%, #43272f 100%);
+  animation: pulse 2s infinite;
+}
+
+/* The large-bar will remain static once the small-bar reaches its full width */
+.large-bar {
+  width: 700px; /* Final width */
+  visibility: hidden; /* Hidden, as the growing bar acts as the loading bar */
+}
+
+.main-content {
+  display: none;
+  transition: opacity 5s ease-in-out; /* Smooth fade-in transition */
+}

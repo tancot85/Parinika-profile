@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    font-family: 'Nunito', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+}
+body {
+    background: 
+        url('../Images/Home_Page/Grid_Home.png') repeat,
+        linear-gradient(to right, rgba(0, 28, 48, 0.7), rgba(52, 12, 24, 0.7)), /* Gradient */
+        url('../Images/Work_Page/work_bg.png') no-repeat center center/cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #202020;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    border-radius: 0 0 3% 3%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container img {
+    height: 50px;
+    padding-left: 100px;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    font-size:1.5rem;
+    padding: 10px;
+    transition: color 0.3s;
+    padding-right: 60px;
+}
+
+.nav-links a:hover {
+    color: #49D3FF;
+}
+
+/* Card Section */
+.work-section {
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card {
+    border-radius: 20px;
+    opacity: 1;
+    display: flex;
+    background-color: #171717;
+    box-shadow: 2px 2px 20px 1px #FFFFFF1A;
+    overflow: hidden;
+    max-width: 1203px;
+    height: 440px;
+    padding:41px;
+    padding-top: 37px;
+    width: 100%;
+    align-items: center;
+    margin-top: 55px;
+}
+
+.card-content {
+    flex: 1;
+}
+
+.card-content h2 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.card-content .tags {
+    font-family: 'Nunito Sans', sans-serif;
+    font-style: italic;
+    font-weight: 300;
+    color: #E07160;
+    font-size: 30px;
+    margin-bottom: 100px;
+}
+
+/* Button styling for both buttons */
+.button {
+    font-family: 'Nunito Sans', sans-serif;
+    max-width: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 24px;
+    margin-right: 10px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid #ffffff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #49D3FF; /* Change background to white */
+    color: #000000; /* Text color to black */
+    border-color: #49D3FF; /* Change border to white */
+}
+
+/* Icon Box */
+.icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px; /* Add space between text and icon */
+    border: 1px solid white;
+    border-radius: 4px; /* Rounded box */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Invert the black arrow icon to white */
+.icon-box img {
+    width: 16px; /* Adjust icon size */
+    height: 16px;
+    filter: invert(1); /* Inverts color from black to white */
+    transition: filter 0.3s ease;
+}
+
+/* Hover effect for the icon and its box */
+.button:hover .icon-box {
+    border-color: #000000; /* Box border turns black */
+    background-color: #49D3FF; /* Optional: background change */
+}
+
+.button:hover .icon-box img {
+    filter: invert(0); /* Reverts the color back to black on hover */
+}
+
+
+.card-content .tags-p2{
+    color:#A193F2;
+}
+.card-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 250px;
+    border: 1px solid #E07160;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+.ci-p2{
+    border: 1px solid #A193F2;
+    border-radius: 12px;
+}
+
+.card-image img {
+    height: 180px;
+    width: 180px;
+}
+
+footer {
+    background-color: #202020;
+    color: white;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border-radius: 40px 40px 0 0; */
+    position: relative;
+    bottom: 0;
+    padding-right: 60px;
+    padding-left: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding:  0 25px; 
+}
+.footer-container p {
+    font-family: 'Nunito' , sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.82px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    gap:18px;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 58px;
+    height: 58px;
+    border: 1.5px solid #fff; 
+    border-radius: 50%; 
+    transition: border-color 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.icon img {
+    width: 57px; 
+    height: 57px;
+    border-radius: 50%; 
+    z-index: 1; 
+}
+
+.icon:hover {
+    border-color: #49D3FF;
+}
